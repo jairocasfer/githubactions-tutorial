@@ -23,6 +23,9 @@ jobs:
       platform: aws
       region: us-east-1
       account: 1234564789
+      username: ${{secrets.USERNAME}}
+      pass: ${{secrets.PASSWORD}}
+
 
     # Construira una maquina de ubuntu, la ultima version
     runs-on: ubuntu-latest
@@ -39,9 +42,12 @@ jobs:
           echo "Esto es e valor de Region: ${{env.region}}"
           echo "Esto es e valor de Account: ${{env.account}}"
 
+          echo "Esto es e valor de Account: ${{secrets.USERNAME}}"
+          echo "Esto es e valor de Account: ${{secrets.PASSWORD}}"
+
       - name: "Mostrando variables por defecto"
         run: |
-          echo "Evento: ${{toJSON(github.event)}}"
+          echo "Evento: ${{toJSON(github.event)}}" # Mostrando en json
           echo "Github_ACTOR: $GITHUB_ACTOR"
           echo "Github_REPOSITORY: $GITHUB_REPOSITORY"
       
