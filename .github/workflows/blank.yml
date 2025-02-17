@@ -49,7 +49,7 @@ jobs:
       - name: "Mostrando valores solo su el usuario es el correcto" 
         if: ${{env.username != '' && env.pass != ''}}
         run: |
-          echo: "Si existe usuario y contraseña"
+          echo "Si existe usuario y contraseña"
 
       - name: "Mostrando variables por defecto"
         run: |
