@@ -45,6 +45,11 @@ jobs:
           echo "Esto es e valor de Account: ${{secrets.USERNAME}}"
           echo "Esto es e valor de Account: ${{secrets.PASSWORD}}"
 
+      - name: "Mostrando valores solo su el usuario es el correcto" 
+        if: ${{env.username != '' && env.pass != ''}}
+        run: |
+          echo: "Si existe usuario y contraseña"
+
       - name: "Mostrando variables por defecto"
         run: |
           echo "Evento: ${{toJSON(github.event)}}" # Mostrando en json
