@@ -42,8 +42,9 @@ jobs:
           echo "Esto es e valor de Region: ${{env.region}}"
           echo "Esto es e valor de Account: ${{env.account}}"
 
-          echo "Esto es e valor de Account: ${{secrets.USERNAME}}"
-          echo "Esto es e valor de Account: ${{secrets.PASSWORD}}"
+          echo "Este es el valor de la variable: ${{vars.PROJECT_VARS}}"
+          echo "Esto es e valor de username: ${{secrets.USERNAME}}"
+          echo "Esto es e valor de Password: ${{secrets.PASSWORD}}"
 
       - name: "Mostrando valores solo su el usuario es el correcto" 
         if: ${{env.username != '' && env.pass != ''}}
